@@ -1,0 +1,7 @@
+
+State Machine - |top_module|FSM_Moore:U1|current_state
+Name current_state.D101 current_state.D10 current_state.D1 current_state.IDLE 
+current_state.IDLE 0 0 0 0 
+current_state.D1 0 0 1 1 
+current_state.D10 0 1 0 1 
+current_state.D101 1 0 0 1 

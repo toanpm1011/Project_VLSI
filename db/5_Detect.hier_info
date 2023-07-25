@@ -1,0 +1,158 @@
+|top_module
+bit_in => bit_in.IN1
+clk => clk.IN2
+rst_n => rst_n.IN2
+SEG1[0] <= LED7SEG:U5.SEG
+SEG1[1] <= LED7SEG:U5.SEG
+SEG1[2] <= LED7SEG:U5.SEG
+SEG1[3] <= LED7SEG:U5.SEG
+SEG1[4] <= LED7SEG:U5.SEG
+SEG1[5] <= LED7SEG:U5.SEG
+SEG1[6] <= LED7SEG:U5.SEG
+SEG2[0] <= LED7SEG:U6.SEG
+SEG2[1] <= LED7SEG:U6.SEG
+SEG2[2] <= LED7SEG:U6.SEG
+SEG2[3] <= LED7SEG:U6.SEG
+SEG2[4] <= LED7SEG:U6.SEG
+SEG2[5] <= LED7SEG:U6.SEG
+SEG2[6] <= LED7SEG:U6.SEG
+SEG3[0] <= LED7SEG:U7.SEG
+SEG3[1] <= LED7SEG:U7.SEG
+SEG3[2] <= LED7SEG:U7.SEG
+SEG3[3] <= LED7SEG:U7.SEG
+SEG3[4] <= LED7SEG:U7.SEG
+SEG3[5] <= LED7SEG:U7.SEG
+SEG3[6] <= LED7SEG:U7.SEG
+
+
+|top_module|FSM_Moore:U1
+bit_in => Selector1.IN2
+bit_in => next_state.D101.DATAB
+bit_in => Selector0.IN2
+bit_in => Selector0.IN3
+bit_in => next_state.D10.DATAB
+clk => current_state~1.DATAIN
+rst_n => current_state~3.DATAIN
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_module|counter:U2
+clk => overflow~reg0.CLK
+clk => counter[0]~reg0.CLK
+clk => counter[1]~reg0.CLK
+clk => counter[2]~reg0.CLK
+clk => counter[3]~reg0.CLK
+clk => counter[4]~reg0.CLK
+clk => counter[5]~reg0.CLK
+clk => counter[6]~reg0.CLK
+clk => counter[7]~reg0.CLK
+rst_n => overflow~reg0.ACLR
+rst_n => counter[0]~reg0.ACLR
+rst_n => counter[1]~reg0.ACLR
+rst_n => counter[2]~reg0.ACLR
+rst_n => counter[3]~reg0.ACLR
+rst_n => counter[4]~reg0.ACLR
+rst_n => counter[5]~reg0.ACLR
+rst_n => counter[6]~reg0.ACLR
+rst_n => counter[7]~reg0.ACLR
+active => overflow~reg0.ENA
+active => counter[7]~reg0.ENA
+active => counter[6]~reg0.ENA
+active => counter[5]~reg0.ENA
+active => counter[4]~reg0.ENA
+active => counter[3]~reg0.ENA
+active => counter[2]~reg0.ENA
+active => counter[1]~reg0.ENA
+active => counter[0]~reg0.ENA
+counter[0] <= counter[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[1] <= counter[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[2] <= counter[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[3] <= counter[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[4] <= counter[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[5] <= counter[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[6] <= counter[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[7] <= counter[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+overflow <= overflow~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_module|Extract_bit:U3
+num_in[0] => Div0.IN14
+num_in[0] => Mod0.IN14
+num_in[0] => Mod1.IN11
+num_in[1] => Div0.IN13
+num_in[1] => Mod0.IN13
+num_in[1] => Mod1.IN10
+num_in[2] => Div0.IN12
+num_in[2] => Mod0.IN12
+num_in[2] => Mod1.IN9
+num_in[3] => Div0.IN11
+num_in[3] => Mod0.IN11
+num_in[3] => Mod1.IN8
+num_in[4] => Div0.IN10
+num_in[4] => Mod0.IN10
+num_in[4] => Mod1.IN7
+num_in[5] => Div0.IN9
+num_in[5] => Mod0.IN9
+num_in[5] => Mod1.IN6
+num_in[6] => Div0.IN8
+num_in[6] => Mod0.IN8
+num_in[6] => Mod1.IN5
+num_in[7] => Div0.IN7
+num_in[7] => Mod0.IN7
+num_in[7] => Mod1.IN4
+hundred[0] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+hundred[1] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+hundred[2] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+hundred[3] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+tens[0] <= Div1.DB_MAX_OUTPUT_PORT_TYPE
+tens[1] <= Div1.DB_MAX_OUTPUT_PORT_TYPE
+tens[2] <= Div1.DB_MAX_OUTPUT_PORT_TYPE
+tens[3] <= Div1.DB_MAX_OUTPUT_PORT_TYPE
+units[0] <= Mod1.DB_MAX_OUTPUT_PORT_TYPE
+units[1] <= Mod1.DB_MAX_OUTPUT_PORT_TYPE
+units[2] <= Mod1.DB_MAX_OUTPUT_PORT_TYPE
+units[3] <= Mod1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_module|LED7SEG:U5
+BCD[0] => Decoder0.IN3
+BCD[1] => Decoder0.IN2
+BCD[2] => Decoder0.IN1
+BCD[3] => Decoder0.IN0
+SEG[0] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+SEG[1] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+SEG[2] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+SEG[3] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+SEG[4] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+SEG[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+SEG[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_module|LED7SEG:U6
+BCD[0] => Decoder0.IN3
+BCD[1] => Decoder0.IN2
+BCD[2] => Decoder0.IN1
+BCD[3] => Decoder0.IN0
+SEG[0] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+SEG[1] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+SEG[2] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+SEG[3] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+SEG[4] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+SEG[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+SEG[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_module|LED7SEG:U7
+BCD[0] => Decoder0.IN3
+BCD[1] => Decoder0.IN2
+BCD[2] => Decoder0.IN1
+BCD[3] => Decoder0.IN0
+SEG[0] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+SEG[1] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+SEG[2] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+SEG[3] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+SEG[4] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+SEG[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+SEG[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

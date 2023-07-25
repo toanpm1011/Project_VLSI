@@ -1,0 +1,1 @@
+Info (10281): Verilog HDL Declaration information at FSM_Moore.v(12): object "next_state" differs only in case from object "NEXT_STATE" in the same scope

@@ -1,0 +1,14 @@
+module top_module(bit_in, clk, rst_n, count_5, overflow);
+input bit_in, clk, rst_n;
+output count_5, overflow;
+
+wire active;
+
+wire [7:0] count_5;
+wire overflow;
+
+
+FSM U1 (.a(bit_in), .clk(clk), .rst_n(rst_n), .out(active));
+counter U2 (.clk(clk), .rst_n(rst_n), .active(active), .counter(count_5), .overflow(overflow));
+
+endmodule
