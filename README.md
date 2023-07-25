@@ -8,7 +8,9 @@
 ### 3. Vũ Mạnh Hà
 #### 7/2023
 
-### (Sử dụng ngôn ngữ Verilog, phần mềm mô phỏng: Modelsim, phần mềm tổng hợp: Quartus II 9.1sp2 Web Edition)
+### (Sử dụng ngôn ngữ Verilog
+### Phần mềm mô phỏng: Modelsim
+### Phần mềm tổng hợp: Quartus II 9.1sp2 Web Edition
 
-### Project_VLSI_20222 with CoAsia SEMI Vietnam
+### Project_VLSI_20222 with CoAsia SEMI Vietnam.
 ### (Mr Nguyen Ngoc Trung, Mr Pham Minh Duc)
