@@ -51,15 +51,16 @@ set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id e
 set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
-set_global_assignment -name VERILOG_FILE counter.v
-set_global_assignment -name VERILOG_FILE top_module.v
-set_global_assignment -name VERILOG_FILE top_module_tb.v
-set_global_assignment -name VERILOG_FILE FSM_Moore.v
-set_global_assignment -name VERILOG_TEST_BENCH_FILE FSM_Moore_tb.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name VERILOG_FILE counter.v
+set_global_assignment -name VERILOG_FILE top_module.v
+set_global_assignment -name VERILOG_FILE FSM_Moore.v
+set_global_assignment -name VERILOG_TEST_BENCH_FILE FSM_Moore_tb.v
 set_global_assignment -name VERILOG_FILE LED7SEG.v
 set_global_assignment -name VERILOG_FILE Extract_bit.v
+set_global_assignment -name VERILOG_TEST_BENCH_FILE top_module_tb.v
+set_global_assignment -name VERILOG_TEST_BENCH_FILE counter_tb.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

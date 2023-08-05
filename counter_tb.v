@@ -1,39 +1,31 @@
 `timescale 1ns/1ps
-module top_module_tb;
-
-integer i;
+module counter_tb;
+//module counter(clk, rst_n, active, counter, overflow);
 //Interface
 // input
 reg clk;
 reg rst_n;
-reg a;
+reg active;
 
 //output
 
-wire [7:0] SEG1;
-wire [7:0] SEG2;
-wire [7:0] SEG3;
+wire [7:0] counter;
+wire overflow;
 
 //reg current_state;
 
-top_module F2 (.bit_in(a), .clk(clk), .rst_n(rst_n), .SEG1(SEG1), .SEG2(SEG2), .SEG3(SEG3));
+counter F3 (.clk(clk), .rst_n(rst_n), .active(active), .counter(counter), .overflow(overflow));
 
 //initial current_state = IDLE;
 // Tao xung a voi chu ki 20 don vi thoi gian
 initial begin
 rst_n =0;
-a= 1;
+active = 0;
 #10 rst_n = 1;
-for (i=0; i<600; i=i+1) 
-begin
-#10 a = 1;
-#10 a = 0;
-#10 a = 1;
+forever #10 active = ~active;
+
 end
-#10 a=0;
-#10 a=1;
-#30 rst_n = 0;
-end
+
 // tao xung clk
 initial begin
  clk = 0;

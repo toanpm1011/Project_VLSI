@@ -12,11 +12,13 @@ reg a;
 
 //output
 
-wire count_5;
-wire overflow;
+wire [7:0] SEG1;
+wire [7:0] SEG2;
+wire [7:0] SEG3;
+
 //reg current_state;
 
-top_module F2 (.bit_in(a), .clk(clk), .rst_n(rst_n), .count_5(count_5), .overflow(overflow));
+top_module F2 (.bit_in(a), .clk(clk), .rst_n(rst_n), .SEG1(SEG1), .SEG2(SEG2), .SEG3(SEG3));
 
 //initial current_state = IDLE;
 // Tao xung a voi chu ki 20 don vi thoi gian
