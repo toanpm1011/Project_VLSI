@@ -9,7 +9,7 @@
 
 ### - Sử dụng ngôn ngữ Verilog
 ### - Phần mềm mô phỏng: Modelsim
-### - Coding & Copilation: Altera Quartus II 9.1sp2 Web Edition
+### - Coding & Compilation: Altera Quartus II 9.1sp2 Web Edition
 ### - Synthesis: Yosys
 
 ### Project_VLSI_20222 with CoAsia SEMI Vietnam.
